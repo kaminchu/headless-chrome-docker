@@ -19,10 +19,10 @@ RUN apk update && apk upgrade && \
       font-ipa@edge \
       nss@edge
 
-RUN addgroup -S $(USER) && adduser -S -g $(USER) $(USER) \
-    && mkdir -p /home/$(USER)/app \
-    && chown -R $(USER):$(USER) /home/$(USER)
+RUN addgroup -S ${USER} && adduser -S -g ${USER} ${USER} \
+    && mkdir -p /home/${USER}/app \
+    && chown -R ${USER}:${USER} /home/${USER}
 
-USER $(USER)
+USER ${USER}
 ENV LANG ja_JP.UTF-8
-WORKDIR /home/$(USER)/work
+WORKDIR /home/${USER}/work
